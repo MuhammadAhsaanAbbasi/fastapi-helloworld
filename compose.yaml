@@ -1,0 +1,36 @@
+version: "3.5"
+
+name: fastapi
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres_db
+    networks:
+      - my-api-network
+  postgres_db:
+    image: postgres:latest
+    restart: always
+    container_name: postgres_db
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    networks:
+      - my-api-network
+
+volumes:
+  postgres_db:
+    driver: local
+
+networks:
+  my-api-network:
+    driver: bridge
