@@ -21,7 +21,7 @@
 
     RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-    COPY ./app /code/app
+    COPY ./ /code/app
     # We will comment COPY .env /code/ later 
     # COPY .env /code/
     # Set up a non-root user for better security
@@ -32,4 +32,4 @@
 
     EXPOSE 8000
 
-    CMD ["poetry","run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    CMD ["poetry","run", "uvicorn", "fastapi_helloworld.main:app", "--host", "0.0.0.0", "--port", "8000"]
