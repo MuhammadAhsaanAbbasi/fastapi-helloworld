@@ -2,7 +2,7 @@
 # Dependency Resolution Stage:
     FROM python:3.12 as requirements-stage
 
-    LABEL maintainer="ameen-alam"
+    LABEL maintainer="mahsaanabbasi@gmail.com"
 
     WORKDIR /tmp
 
