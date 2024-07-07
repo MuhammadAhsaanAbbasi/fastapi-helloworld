@@ -6,11 +6,14 @@
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",
+            "cwd": "${workspaceFolder}/fastapi_helloworld",
             "args": [
                 "main:app",
+                "--port",
+                "3500",
                 "--reload"
             ],
             "jinja": true
-        }
+        },
     ]
 }
