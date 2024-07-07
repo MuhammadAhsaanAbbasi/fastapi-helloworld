@@ -8,4 +8,4 @@ def read_root():
 
 @app.get("/items")
 def create_items():
-    return {"Message" : "Item Created"} 
+    return {"Message" : "Item Created"}
