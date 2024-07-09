@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi_helloworld3:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:latest
 
       - name: Deploy Bicep file
         uses: azure/arm-deploy@v1
@@ -36,6 +36,6 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./main.bicep
-          parameters: image=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi_helloworld3:latest
+          parameters: image=${{ secrets.DOCKER_HUB_USERNAME }}/myapp:latest
           scope: subscription # Specify the scope here, e.g., subscription, resourceGroup, managementGroup
           failOnStdErr: false
