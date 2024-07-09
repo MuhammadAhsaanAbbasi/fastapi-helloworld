@@ -36,6 +36,6 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./main.bicep
-          parameters: image=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi_helloworld3:latest
+          parameters: Image=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi_helloworld3:latest
           scope: resourcegroup # Specify the scope here, e.g., subscription, resourceGroup, managementGroup
           failOnStdErr: false
